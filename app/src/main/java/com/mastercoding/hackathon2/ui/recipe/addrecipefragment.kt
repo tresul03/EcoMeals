@@ -1,6 +1,7 @@
 package com.mastercoding.hackathon2.ui.recipe
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,6 +30,8 @@ class addrecipefragment : Fragment() {
     private lateinit var ingredientList: RecyclerView
     private lateinit var submitButton: Button
 
+    private lateinit var adapter: IngredientListAdapter
+
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,23 +46,23 @@ class addrecipefragment : Fragment() {
         addIngredientButton = view.findViewById(R.id.addIngredientButton)
         ingredientList = view.findViewById(R.id.ingredientList)
         submitButton = view.findViewById(R.id.submit)
+
+        ingredientList.layoutManager = LinearLayoutManager(requireContext())
+        adapter = IngredientListAdapter(viewModel.ingredientsList)
+        ingredientList.adapter = adapter
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set up RecyclerView
-        ingredientList.layoutManager = LinearLayoutManager(requireContext())
-        val adapter = IngredientListAdapter()
-        ingredientList.adapter = adapter
-
         // Handle adding an ingredient
         addIngredientButton.setOnClickListener {
             val name = ingredientNameInput.text.toString()
             val manufacturer = ingredientManufacturerInput.text.toString()
             viewModel.addIngredient(name, manufacturer)
-            adapter.submitList(viewModel.ingredients.toList())
+            adapter.notifyDataSetChanged()
 
             // Clear the EditText fields after adding ingredient
             ingredientNameInput.text.clear()
@@ -79,12 +82,11 @@ class addrecipefragment : Fragment() {
         submitButton.setOnClickListener {
             val name = recipeNameInput.text.toString()
             val image = viewModel.recipeImageUri
-            val ingredients = viewModel.ingredients.toList()
+            val ingredients = viewModel.ingredientsList.toList()
             viewModel.submitRecipe(name, image, ingredients)
-
             // Clear the EditText fields and reset the ViewModel after submitting the recipe
             recipeNameInput.text.clear()
-            adapter.submitList(emptyList())
+            adapter.notifyDataSetChanged()
             viewModel.reset()
         }
     }
@@ -101,5 +103,4 @@ class addrecipefragment : Fragment() {
     companion object {
         const val REQUEST_CODE_IMAGE = 100
     }
-}
 }

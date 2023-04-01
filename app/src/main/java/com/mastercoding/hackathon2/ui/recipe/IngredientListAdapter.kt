@@ -6,31 +6,28 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mastercoding.hackathon2.R
-import com.mastercoding.hackathon2.models.Ingredient
 
-class IngredientListAdapter(private val ingredientList: MutableList<Ingredient>) :
-    RecyclerView.Adapter<IngredientListAdapter.IngredientViewHolder>() {
+class IngredientListAdapter : RecyclerView.Adapter<IngredientListAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
-        val view =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.ingredient_list_item, parent, false)
-        return IngredientViewHolder(view)
+    var ingredientsList = mutableListOf<Pair<String, String>>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.ingredient_list_item, parent, false)
+        return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
-        val ingredient = ingredientList[position]
-        holder.ingredientName.text = ingredient.name
-        holder.ingredientManufacturer.text = ingredient.manufacturer
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val ingredient = ingredientsList[position]
+        holder.bind(ingredient)
     }
 
-    override fun getItemCount(): Int {
-        return ingredientList.size
-    }
+    override fun getItemCount() = ingredientsList.size
 
-    inner class IngredientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ingredientName: TextView = itemView.findViewById(R.id.ingredientName)
-        val ingredientManufacturer: TextView =
-            itemView.findViewById(R.id.ingredientManufacturer)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        fun bind(ingredient: Pair<String, String>) {
+            itemView.ingredientName.text = ingredient.first
+            itemView.ingredientManufacturer.text = ingredient.second
+        }
     }
 }
