@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mastercoding.hackathon2.ui.home.HomeFragment"
+        android:name="com.mastercoding.hackathon2.ui.recommendation.recommendationfragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_recommendation" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.mastercoding.hackathon2.ui.dashboard.DashboardFragment"
+        android:name="com.mastercoding.hackathon2.ui.recipe.recipefragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_recipe" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.mastercoding.hackathon2.ui.notifications.NotificationsFragment"
+        android:name="com.mastercoding.hackathon2.ui.scanner.scannerfragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_scanner" />
 </navigation>

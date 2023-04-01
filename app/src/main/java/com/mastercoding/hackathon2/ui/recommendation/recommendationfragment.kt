@@ -1,4 +1,4 @@
-package com.mastercoding.hackathon2.ui.notifications
+package com.mastercoding.hackathon2.ui.recommendation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.mastercoding.hackathon2.databinding.FragmentNotificationsBinding
+import com.mastercoding.hackathon2.databinding.FragmentRecommendationBinding
 
-class NotificationsFragment : Fragment() {
+class recommendationfragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentRecommendationBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this).get(recommendationviewmodel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentRecommendationBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

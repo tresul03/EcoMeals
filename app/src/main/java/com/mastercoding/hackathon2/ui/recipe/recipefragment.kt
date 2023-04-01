@@ -1,4 +1,4 @@
-package com.mastercoding.hackathon2.ui.dashboard
+package com.mastercoding.hackathon2.ui.recipe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.mastercoding.hackathon2.databinding.FragmentDashboardBinding
+import com.mastercoding.hackathon2.databinding.FragmentRecipeBinding
 
-class DashboardFragment : Fragment() {
+class recipefragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentRecipeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,9 +23,9 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+            ViewModelProvider(this).get(recipeviewmodel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentRecipeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
