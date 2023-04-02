@@ -1,15 +1,19 @@
 package com.mastercoding.hackathon2
 
 
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.mastercoding.hackathon2.databinding.ActivityMainBinding
-import com.mastercoding.hackathon2.ui.recipe.recipefragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,5 +38,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
     }
+
+    companion object {
+        private const val CAMERA_PERMISSION_CODE = 100
+    }
+
+
 }
