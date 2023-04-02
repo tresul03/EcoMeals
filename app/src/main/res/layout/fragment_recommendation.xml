@@ -12,31 +12,31 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/image_of_recipe"
         app:layout_constraintBottom_toTopOf="@+id/recipeName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/image_of_recipe"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintWidth_percent="1.0" />
 
     <ImageButton
         android:id="@+id/addImageButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="235dp"
+        android:layout_height="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:scaleType="fitCenter"
         android:background="@null"
-        android:src="@drawable/ic_add_image"
         android:contentDescription="@string/image_of_recipe"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_image"
         app:layout_constraintBottom_toTopOf="@+id/recipeName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857"
         app:layout_constraintWidth_percent="0.8" />
 
     <TextView
@@ -45,24 +45,26 @@
         android:layout_height="wrap_content"
         android:hint="Enter recipe name"
         android:inputType="text"
+        android:paddingBottom="16dp"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeImage"
-        app:layout_constraintWidth_percent="0.8"
-        android:paddingBottom="16dp"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintWidth_percent="0.8" />
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="332dp"
+        android:layout_height="170dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeName"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintVertical_bias="0.058"
+        app:layout_constraintWidth_percent="0.8">
 
         <EditText
             android:id="@+id/ingredientNameInput"
@@ -78,33 +80,123 @@
             android:hint="Manufacturer"
             android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/addIngredientButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Ingredient" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ingredientList"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/submit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addIngredientButton"
-            tools:listitem="@layout/ingredient_list_item" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Alternatives" />
+
+            <Button
+                android:id="@+id/addIngredientButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Add Ingredient" />
+        </LinearLayout>
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="Alternatives:"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="116dp"
+        android:text="Ingredient"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="41dp"
+        android:text="Manufacturer"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="17dp"
+        android:text="Rice"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="Tesco"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="13dp"
+        android:text="CarbonScore: 2.3"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="51dp"
+        android:text="CarbonScore: 9"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

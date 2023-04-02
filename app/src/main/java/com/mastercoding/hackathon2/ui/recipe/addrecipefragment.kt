@@ -85,7 +85,7 @@ class addrecipefragment : Fragment() {
             val name = recipeNameInput.text.toString()
             val image = viewModel.recipeImageUri
             val ingredients = viewModel.ingredientsList.toList()
-            viewModel.submitRecipe(name, image, ingredients)
+            viewModel.addRecipe(name, image, ingredients)
             // Clear the EditText fields and reset the ViewModel after submitting the recipe
             recipeNameInput.text.clear()
             adapter.notifyDataSetChanged()
@@ -99,7 +99,7 @@ class addrecipefragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
             val imageUri = data.data
-            viewModel.setImage(imageUri)
+//            viewModel.setImage(imageUri)
             recipeImage.setImageURI(imageUri)
         }
     }
