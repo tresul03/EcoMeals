@@ -16,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/image_of_recipe"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintWidth_percent="1.0" />
@@ -29,6 +30,7 @@
         android:scaleType="fitCenter"
         android:background="@null"
         android:src="@drawable/ic_add_image"
+        android:contentDescription="@string/image_of_recipe"
         app:layout_constraintBottom_toTopOf="@+id/recipeName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
@@ -66,13 +68,15 @@
             android:id="@+id/ingredientNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingredient Name" />
+            android:hint="Ingredient Name"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/ingredientManufacturerInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Manufacturer" />
+            android:hint="Manufacturer"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/addIngredientButton"

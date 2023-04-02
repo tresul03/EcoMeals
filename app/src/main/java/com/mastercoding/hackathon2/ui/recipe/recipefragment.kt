@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mastercoding.hackathon2.databinding.FragmentRecipeBinding
+import com.mastercoding.hackathon2.ui.recommendation.recommendationviewmodel
 
 class recipefragment : Fragment() {
 
@@ -19,24 +20,21 @@ class recipefragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(recipeviewmodel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val homeViewModel = ViewModelProvider(this).get(recipeviewmodel::class.java)
 
         _binding = FragmentRecipeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textRecipes
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
         val button: Button = binding.button
         button.setOnClickListener{
+            val intent = Intent(requireContext(), addrecipefragment::class.java)
+            startActivity(intent)
 
         }
 

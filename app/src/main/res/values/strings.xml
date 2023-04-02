@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hackathon2</string>
-    <string name="title_recipes">Recipes</string>
-    <string name="title_recommendations">Recommendations</string>
+    <string name="title_recipes">Recommendations</string>
+    <string name="title_recommendations">Recipes</string>
     <string name="title_scanner">Scanner</string>
     <string name="carbon_rating">Carbon Rating:</string>
     <string name="recipe_name">Recipe Name</string>

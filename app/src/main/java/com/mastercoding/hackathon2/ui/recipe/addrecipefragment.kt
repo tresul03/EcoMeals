@@ -19,6 +19,7 @@ import com.mastercoding.hackathon2.R
 
 class addrecipefragment : Fragment() {
     private val viewModel: addrecipeviewmodel by activityViewModels()
+    private lateinit var adapter: IngredientListAdapter
 
     private lateinit var recipeImage: ImageView
     private lateinit var addImageButton: ImageButton
@@ -30,8 +31,6 @@ class addrecipefragment : Fragment() {
     private lateinit var ingredientList: RecyclerView
     private lateinit var submitButton: Button
 
-    private lateinit var adapter: IngredientListAdapter
-
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +39,7 @@ class addrecipefragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
         recipeImage = view.findViewById(R.id.recipeImage)
         addImageButton = view.findViewById(R.id.addImageButton)
-        recipeNameInput = view.findViewById(R.id.recipeName);
+        recipeNameInput = view.findViewById(R.id.recipeName)
         ingredientNameInput = view.findViewById(R.id.ingredientNameInput)
         ingredientManufacturerInput = view.findViewById(R.id.ingredientManufacturerInput)
         addIngredientButton = view.findViewById(R.id.addIngredientButton)
@@ -48,7 +47,7 @@ class addrecipefragment : Fragment() {
         submitButton = view.findViewById(R.id.submit)
 
         ingredientList.layoutManager = LinearLayoutManager(requireContext())
-        adapter = IngredientListAdapter(viewModel.ingredientsList)
+        adapter = IngredientListAdapter(view)
         ingredientList.adapter = adapter
 
         return view

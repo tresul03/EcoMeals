@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.mastercoding.hackathon2.models.Ingredient
 
 
-class AddRecipeViewModel : ViewModel() {
+class addrecipeviewmodel : ViewModel() {
 
     var recipeImageUri: Uri? = null
     var ingredientsList = mutableListOf<Pair<String, String>>()
@@ -14,12 +14,14 @@ class AddRecipeViewModel : ViewModel() {
         ingredientsList.add(Pair(name, manufacturer))
     }
 
-    fun setImage(uri: Uri) {
+    fun setImage(uri: Uri?) {
         recipeImageUri = uri
     }
 
     fun submitRecipe(name: String, image: Uri?, ingredients: List<Pair<String, String>>) {
         // Handle recipe submission here
+
+
     }
 
     fun reset() {
