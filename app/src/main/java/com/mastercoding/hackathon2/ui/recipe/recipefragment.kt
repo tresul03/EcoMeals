@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mastercoding.hackathon2.R
 import com.mastercoding.hackathon2.databinding.FragmentRecipeBinding
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 
 
 class recipefragment : Fragment() {
@@ -28,12 +30,12 @@ class recipefragment : Fragment() {
 
         val button: Button = binding.button
         button.setOnClickListener{
-            val addRecipeFragment = addrecipefragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentManager = requireActivity().supportFragmentManager
             val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, addRecipeFragment)
-            transaction.addToBackStack(null)
+            val newFragment = recipefragment()
+            transaction.replace(R.id.frame_containing, newFragment)
             transaction.commit()
+            println("Hello")
         }
 
 
