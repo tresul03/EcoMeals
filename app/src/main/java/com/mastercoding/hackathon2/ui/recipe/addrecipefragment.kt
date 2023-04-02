@@ -39,7 +39,7 @@ class addrecipefragment : Fragment() {
     ): View? {
         println("H111")
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
-
+4
         button = view.findViewById(R.id.button)
         button.setOnClickListener(View.OnClickListener {
             val fragment = displayIngredientsFragment()
