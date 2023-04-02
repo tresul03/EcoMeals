@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mastercoding.hackathon2.R
 
 class addrecipefragment : Fragment() {
-    private val viewModel: addrecipeviewmodel by activityViewModels()
+    private lateinit var viewModel: addrecipeviewmodel
     private lateinit var adapter: IngredientListAdapter
 
     private lateinit var recipeImage: ImageView
@@ -36,8 +36,10 @@ class addrecipefragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        println("H111")
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
-        recipeImage = view.findViewById(R.id.recipeImage)
+
+        /*recipeImage = view.findViewById(R.id.recipeImage)
         addImageButton = view.findViewById(R.id.addImageButton)
         recipeNameInput = view.findViewById(R.id.recipeName)
         ingredientNameInput = view.findViewById(R.id.ingredientNameInput)
@@ -50,12 +52,13 @@ class addrecipefragment : Fragment() {
         adapter = IngredientListAdapter(view)
         ingredientList.adapter = adapter
 
+        */
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        /*
         // Handle adding an ingredient
         addIngredientButton.setOnClickListener {
             val name = ingredientNameInput.text.toString()
@@ -88,6 +91,8 @@ class addrecipefragment : Fragment() {
             adapter.notifyDataSetChanged()
             viewModel.reset()
         }
+        */
+         */
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

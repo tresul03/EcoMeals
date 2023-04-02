@@ -29,15 +29,13 @@ class recipefragment : Fragment() {
         val root: View = binding.root
 
         val button: Button = binding.button
-        button.setOnClickListener{
-            val fragmentManager = requireActivity().supportFragmentManager
-            val transaction = fragmentManager.beginTransaction()
-            val newFragment = recipefragment()
+        button.setOnClickListener {
+            val newFragment = addrecipefragment()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.frame_containing, newFragment)
+            transaction.addToBackStack(null)
             transaction.commit()
-            println("Hello")
         }
-
 
         return root
     }

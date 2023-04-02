@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.mastercoding.hackathon2.databinding.ActivityMainBinding
+import com.mastercoding.hackathon2.ui.recipe.recipefragment
 
 class MainActivity : AppCompatActivity() {
 
