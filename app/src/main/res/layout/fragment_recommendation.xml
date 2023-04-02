@@ -11,9 +11,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="348dp"
         android:contentDescription="@string/image_of_recipe"
-        app:layout_constraintBottom_toTopOf="@+id/recipeName"
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,75 +127,77 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="116dp"
-        android:text="Ingredient"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="41dp"
-        android:text="Manufacturer"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="1dp"
+        android:text="Manufacturer 1"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="17dp"
-        android:text="Rice"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="21dp"
         android:text="Tesco"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
-        app:layout_constraintStart_toStartOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="13dp"
-        android:text="CarbonScore: 2.3"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="51dp"
-        android:text="CarbonScore: 9"
+        android:layout_marginBottom="91dp"
+        android:text="CarbonScore: 92"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manufacturer 2"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView17" />
+        app:layout_constraintStart_toEndOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="16dp"
+        android:text="Aldi"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="19dp"
+        android:text="CarbonRating: 85"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

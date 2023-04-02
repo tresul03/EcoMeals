@@ -38,12 +38,10 @@ class recipefragment : Fragment() {
 
         val button: Button = binding.button
         button.setOnClickListener {
-            val newFragment = addrecipefragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_containing, newFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
+            val dialog = MyDialogFragment()
+            dialog.show(parentFragmentManager, "MyDialogFragment")
         }
+
 
         return root
     }

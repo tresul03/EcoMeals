@@ -40,19 +40,12 @@ class addrecipefragment : Fragment() {
         println("H111")
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
 4
-        button = view.findViewById(R.id.button)
-        button.setOnClickListener(View.OnClickListener {
-            val fragment = displayIngredientsFragment()
-            val fragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.display_container, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        })
 
 
         return view
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
